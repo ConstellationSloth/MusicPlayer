@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cjvfswl8cptcs"]
+
+[node name="FileDialog" type="FileDialog"]
+mode = 2
+title = "Open a File"
+initial_position = 1
+ok_button_text = "Upload"
+dialog_hide_on_ok = true
+file_mode = 0
+access = 2
+use_native_dialog = true

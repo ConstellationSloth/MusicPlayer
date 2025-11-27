@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://dadnutm2elwe6"]
+
+[ext_resource type="Theme" uid="uid://cadeuiy7daeg1" path="res://Scenes/maintheme.tres" id="1_41wj6"]
+[ext_resource type="Script" uid="uid://b4ib58xd6yhr4" path="res://Scenes/homepage.gd" id="1_mwg1l"]
+[ext_resource type="PackedScene" uid="uid://cjvfswl8cptcs" path="res://Scenes/MusicUploadDialog.tscn" id="2_qyabd"]
+
+[node name="Home" type="VBoxContainer"]
+theme = ExtResource("1_41wj6")
+script = ExtResource("1_mwg1l")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
+text = "Music Player"
+horizontal_alignment = 1
+
+[node name="SongLibrary" type="Button" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 4
+text = "Song Library"
+
+[node name="Playlists" type="Button" parent="."]
+layout_mode = 2
+text = "Playlists"
+
+[node name="Upload" type="Button" parent="."]
+layout_mode = 2
+theme_override_font_sizes/font_size = 4
+text = "Upload Music"
+
+[node name="FileDialog" parent="." instance=ExtResource("2_qyabd")]
+filters = PackedStringArray("*.mp3")
+
+[connection signal="pressed" from="Upload" to="." method="_on_upload_pressed"]
+[connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]
