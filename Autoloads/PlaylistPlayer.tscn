@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ndtwl71c28u6"]
+
+[ext_resource type="Script" uid="uid://bg7ereue1r60s" path="res://Autoloads/playlist_player.gd" id="1_gor2r"]
+
+[node name="PlaylistPlayer" type="Node"]
+script = ExtResource("1_gor2r")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 EventBus="*res://Autoloads/EventBus.gd"
 Globals="*res://Autoloads/Globals.gd"
 IdController="*res://Autoloads/IdController.gd"
+PlaylistPlayer="*res://Autoloads/PlaylistPlayer.tscn"
 
 [display]
 

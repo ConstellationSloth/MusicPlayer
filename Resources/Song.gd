@@ -23,3 +23,9 @@ func set_data(
 	path = location
 	length = song_length
 	id = song_id
+
+func add_playlist(playlist_id):
+	if len(playlists) == 0:
+		playlists = [playlist_id]
+	else:
+		playlists.append(playlist_id)

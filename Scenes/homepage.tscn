@@ -31,5 +31,7 @@ text = "Upload Music"
 [node name="FileDialog" parent="." instance=ExtResource("2_qyabd")]
 filters = PackedStringArray("*.mp3")
 
+[connection signal="pressed" from="SongLibrary" to="." method="_on_song_library_pressed"]
+[connection signal="pressed" from="Playlists" to="." method="_on_playlists_pressed"]
 [connection signal="pressed" from="Upload" to="." method="_on_upload_pressed"]
 [connection signal="file_selected" from="FileDialog" to="." method="_on_file_dialog_file_selected"]

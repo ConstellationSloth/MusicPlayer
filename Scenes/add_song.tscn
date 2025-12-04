@@ -1,17 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://sr6x4e0eogv"]
+[gd_scene load_steps=4 format=3 uid="uid://sr6x4e0eogv"]
 
 [ext_resource type="Script" uid="uid://5sdlwyycrq84" path="res://Scenes/add_song.gd" id="1_km0i0"]
 [ext_resource type="PackedScene" uid="uid://cy5y66cx5i6f6" path="res://Scenes/upload_music_info_row.tscn" id="1_mebfg"]
+[ext_resource type="Theme" uid="uid://cadeuiy7daeg1" path="res://Scenes/maintheme.tres" id="1_w1thd"]
 
 [node name="AddSong" type="Control"]
 layout_mode = 3
-anchors_preset = 0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_w1thd")
 script = ExtResource("1_km0i0")
 
 [node name="AddSong" type="VBoxContainer" parent="."]
-layout_mode = 0
-offset_right = 70.0
-offset_bottom = 140.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="PageTitle" type="Label" parent="AddSong"]
 layout_mode = 2
@@ -36,6 +45,21 @@ type = 1
 [node name="Album" parent="AddSong/InfoHolder" instance=ExtResource("1_mebfg")]
 layout_mode = 2
 type = 2
+
+[node name="PlaylistRow" type="HBoxContainer" parent="AddSong"]
+layout_mode = 2
+
+[node name="PlaylistLabel" type="Label" parent="AddSong/PlaylistRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Playlist"
+
+[node name="PlaylistOptions" type="OptionButton" parent="AddSong/PlaylistRow"]
+layout_mode = 2
+size_flags_horizontal = 3
+item_count = 1
+popup/item_0/text = "Playlist1"
+popup/item_0/id = 0
 
 [node name="Add" type="Button" parent="AddSong"]
 layout_mode = 2

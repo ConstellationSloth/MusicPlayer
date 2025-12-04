@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxnh411o1g6jr"]
+
+[ext_resource type="Theme" uid="uid://cadeuiy7daeg1" path="res://Scenes/maintheme.tres" id="1_tf6ob"]
+[ext_resource type="Script" uid="uid://cwgyeyjqa1kdx" path="res://Scenes/playlist_list.gd" id="1_x5ge6"]
+
+[node name="PlaylistList" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_tf6ob")
+script = ExtResource("1_x5ge6")
+playlist_button_path = "res://Scenes/playlist_button.tscn"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Playlists" type="VBoxContainer" parent="VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 4
+
+[node name="CreateNew" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Create New Playlist"
+
+[connection signal="pressed" from="VBoxContainer/CreateNew" to="." method="_on_create_new_pressed"]

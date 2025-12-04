@@ -1,13 +1,13 @@
 extends Node
 
 enum MusicInfoType { Name, Artist, Album}
-
+const USER_DIRECTORY = "user://"
 const SONG_INFO_DIRECTORY = "user://song_info/"
 const SONG_DATA_DIRECTORY = "user://song_data/"
-const PLAYLIST_DIRECTORY = "user://playlists/"
-const USER_DIRECTORY = "user://"
+
 func _ready():
 	ensure_all_directories_exist()
+
 
 
 
@@ -23,9 +23,11 @@ func get_music_info_type_description(type: MusicInfoType):
 
 
 func ensure_all_directories_exist():
+	print("checking data directory")
 	check_directory(SONG_DATA_DIRECTORY)
+	print("checking info directory")
 	check_directory(SONG_INFO_DIRECTORY)
-	check_directory(PLAYLIST_DIRECTORY)
+	print("finished with song directories")
 
 func check_directory(path):
 	var dir_access = DirAccess.open(USER_DIRECTORY)
