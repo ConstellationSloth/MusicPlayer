@@ -39,6 +39,7 @@ func add_song():
 		new_song.add_playlist(playlist_id)
 		var playlist = PlaylistPlayer.playlist_dictionary[playlist_id]
 		playlist.songs.append(song_id)
+		playlist.length += new_song.length
 		PlaylistPlayer.add_playlist(playlist)
 	ResourceSaver.save(new_song, Globals.SONG_INFO_DIRECTORY+str(song_id)+".tres")
 	EventBus.song_added.emit()

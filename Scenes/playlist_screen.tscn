@@ -3,12 +3,13 @@
 [ext_resource type="Script" uid="uid://jmfpmjbr44v3" path="res://Scenes/playlist_screen.gd" id="1_m4m31"]
 [ext_resource type="PackedScene" uid="uid://crn344do5xq1p" path="res://Scenes/song_row.tscn" id="2_riiop"]
 
-[node name="PlaylistScreen" type="VBoxContainer" node_paths=PackedStringArray("name_label", "name_line_edit", "confirmation_dialog")]
+[node name="PlaylistScreen" type="VBoxContainer" node_paths=PackedStringArray("name_label", "name_line_edit", "confirmation_dialog", "song_container")]
 script = ExtResource("1_m4m31")
 name_label = NodePath("PlaylistName")
 name_line_edit = NodePath("EditPlaylistName")
 confirmation_dialog = NodePath("ConfirmationDialog")
 song_row_scene = ExtResource("2_riiop")
+song_container = NodePath("Songs")
 
 [node name="EditPlaylistName" type="LineEdit" parent="."]
 visible = false

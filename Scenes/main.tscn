@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cgebfd7wqpb4v"]
+[gd_scene load_steps=10 format=3 uid="uid://cgebfd7wqpb4v"]
 
 [ext_resource type="Script" uid="uid://c8fr2cqmkifjd" path="res://Scenes/main.gd" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://da8ueeyi5lvt0" path="res://Scenes/bg.tscn" id="2_jjvhh"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dadnutm2elwe6" path="res://Scenes/homepage.tscn" id="4_344ge"]
 [ext_resource type="PackedScene" uid="uid://cxnh411o1g6jr" path="res://Scenes/playlist_list.tscn" id="4_jjvhh"]
 [ext_resource type="PackedScene" uid="uid://ndtwl71c28u6" path="res://Autoloads/PlaylistPlayer.tscn" id="5_kry3j"]
+[ext_resource type="PackedScene" uid="uid://8ke344xwx38r" path="res://Scenes/playlist_screen.tscn" id="5_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://d4ihuuf42jp7c" path="res://Scenes/PlaylistPopupPanel.tscn" id="6_21xkr"]
 
 [node name="Main" type="Control"]
@@ -20,6 +21,7 @@ script = ExtResource("1_jjgbg")
 playlist_list_scene = ExtResource("4_jjvhh")
 add_song_scene = ExtResource("4_21xkr")
 home_scene = ExtResource("4_344ge")
+playlist_scene = ExtResource("5_ynf5e")
 
 [node name="BG" parent="." instance=ExtResource("2_jjvhh")]
 layout_mode = 0

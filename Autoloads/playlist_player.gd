@@ -18,6 +18,7 @@ func play_next_song():
 		print("NO SONGS LEFT TO PLAY")
 		return
 	var song = songs_to_play.pop_front()
+	playing_song = song
 	load_song_stream(song)
 
 func load_song_stream(song: Song):
@@ -37,6 +38,8 @@ func load_playlists():
 
 func play_songs(song_info_list : Array[Song]):
 	songs_to_play = song_info_list
+	play_next_song()
+	
 
 func add_playlist(playlist: Playlist):
 	playlist_dictionary[playlist.id] = playlist

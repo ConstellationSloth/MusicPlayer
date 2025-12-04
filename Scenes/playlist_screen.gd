@@ -22,10 +22,8 @@ func set_playlist(playlist_to_set: Playlist):
 
 func _on_play_pressed():
 	#turn the songs into a list
-	var songs_to_play = []
+	var songs_to_play: Array[Song] = []
 	for song_id in playlist.songs:
 		songs_to_play.append(songs[song_id])
 	PlaylistPlayer.play_songs(songs_to_play)
 	
-	# send all the song info to playlist player
-	pass # Replace with function body.
