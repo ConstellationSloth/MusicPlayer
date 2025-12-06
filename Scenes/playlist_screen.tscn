@@ -9,7 +9,7 @@ name_label = NodePath("PlaylistName")
 name_line_edit = NodePath("EditPlaylistName")
 confirmation_dialog = NodePath("ConfirmationDialog")
 song_row_scene = ExtResource("2_riiop")
-song_container = NodePath("Songs")
+song_container = NodePath("ScrollContainer/Songs")
 
 [node name="EditPlaylistName" type="LineEdit" parent="."]
 visible = false
@@ -55,7 +55,10 @@ text = "Play"
 layout_mode = 2
 text = "Add Song"
 
-[node name="Songs" type="VBoxContainer" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+
+[node name="Songs" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
 
 [connection signal="pressed" from="Play" to="." method="_on_play_pressed"]

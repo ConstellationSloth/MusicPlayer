@@ -5,7 +5,7 @@ class_name SongRow
 @onready var length = $HBoxContainer/Length
 
 var song : Song
-signal select_song(song: Song)
+signal song_selected(song: Song)
 
 func set_song(song_to_set : Song):
 	song = song_to_set
@@ -18,4 +18,4 @@ func _ready():
 
 
 func _on_pressed():
-	select_song.emit(song)
+	song_selected.emit(song)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cgebfd7wqpb4v"]
+[gd_scene load_steps=11 format=3 uid="uid://cgebfd7wqpb4v"]
 
 [ext_resource type="Script" uid="uid://c8fr2cqmkifjd" path="res://Scenes/main.gd" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://da8ueeyi5lvt0" path="res://Scenes/bg.tscn" id="2_jjvhh"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ndtwl71c28u6" path="res://Autoloads/PlaylistPlayer.tscn" id="5_kry3j"]
 [ext_resource type="PackedScene" uid="uid://8ke344xwx38r" path="res://Scenes/playlist_screen.tscn" id="5_ynf5e"]
 [ext_resource type="PackedScene" uid="uid://d4ihuuf42jp7c" path="res://Scenes/PlaylistPopupPanel.tscn" id="6_21xkr"]
+[ext_resource type="PackedScene" uid="uid://dfr1mj0la8mxg" path="res://Scenes/song_list.tscn" id="8_hptm8"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -44,7 +45,7 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 10
 
-[node name="Home" parent="PageContainer" instance=ExtResource("4_344ge")]
+[node name="SongList" parent="PageContainer" instance=ExtResource("8_hptm8")]
 layout_mode = 2
 
 [node name="AudioStreamPlayer" parent="." instance=ExtResource("5_kry3j")]

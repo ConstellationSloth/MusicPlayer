@@ -15,6 +15,7 @@ func _ready():
 		songs[song_info.id] = song_info
 		var song_row = song_row_scene.instantiate()
 		song_row.set_song(song_info)
+		#TODO: connect to song selected signal
 		song_container.add_child(song_row)
 
 func set_playlist(playlist_to_set: Playlist):

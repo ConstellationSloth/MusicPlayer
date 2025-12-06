@@ -9,8 +9,6 @@ func _ready():
 	ensure_all_directories_exist()
 
 
-
-
 func get_music_info_type_description(type: MusicInfoType):
 	match(type):
 		MusicInfoType.Name:
