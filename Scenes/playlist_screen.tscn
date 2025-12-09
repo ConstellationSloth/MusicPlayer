@@ -47,18 +47,26 @@ text = "loop"
 
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
 
-[node name="Play" type="Button" parent="."]
+[node name="Buttons" type="HBoxContainer" parent="."]
 layout_mode = 2
+
+[node name="Play" type="Button" parent="Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
 text = "Play"
 
-[node name="AddSong" type="Button" parent="."]
+[node name="AddSong" type="Button" parent="Buttons"]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "Add Song"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 2
+size_flags_vertical = 3
 
 [node name="Songs" type="VBoxContainer" parent="ScrollContainer"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
 
-[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Buttons/Play" to="." method="_on_play_pressed"]

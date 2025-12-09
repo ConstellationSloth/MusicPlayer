@@ -5,7 +5,7 @@ extends Control
 @export var add_song_scene : PackedScene
 @export var home_scene : PackedScene
 @export var playlist_scene : PackedScene
-
+@export var song_library_scene : PackedScene
 @onready var stream_player = $AudioStreamPlayer
 @onready var scene_container = $PageContainer
 
@@ -14,6 +14,13 @@ func _ready():
 	EventBus.song_added.connect(on_song_added)
 	EventBus.view_playlists_selected.connect(view_playlists)
 	EventBus.playlist_selected.connect(view_playlist)
+	EventBus.view_song_library_selected.connect(view_song_library)
+	go_to_home()
+
+func view_song_library():
+	var library = song_library_scene.instantiate()
+	clear_page()
+	set_page(library)
 
 func view_playlist(playlist: Playlist):
 	clear_page()
@@ -26,13 +33,18 @@ func view_playlists():
 	var node = playlist_list_scene.instantiate()
 	set_page(node)
 
+func go_to_home():
+	clear_page()
+	var home_page = home_scene.instantiate()
+	set_page(home_page)
+
 func set_page(node: Node):
 	clear_page()
 	scene_container.add_child(node)
 
 func on_song_added():
-	var home_page = home_scene.instantiate()
-	set_page(home_page)
+	go_to_home()
+	# TODO: have a toast or something indicating success
 
 func clear_page():
 	for child in scene_container.get_children():

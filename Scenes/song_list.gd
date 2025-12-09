@@ -46,3 +46,9 @@ func _on_search_pressed():
 			shown_songs.append(song)
 	clear_songs()
 	add_songs()
+
+
+func _on_clear_search_pressed():
+	clear_songs()
+	shown_songs = songs.duplicate()
+	add_songs()

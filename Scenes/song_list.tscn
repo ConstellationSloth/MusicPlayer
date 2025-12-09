@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://c81evrtqtd7ly" path="res://Scenes/song_list.gd" id="1_ulvc6"]
 [ext_resource type="PackedScene" uid="uid://crn344do5xq1p" path="res://Scenes/song_row.tscn" id="2_4yn0g"]
 
-[node name="SongList" type="VBoxContainer" node_paths=PackedStringArray("song_rows")]
+[node name="SongList" type="VBoxContainer" node_paths=PackedStringArray("song_rows", "search_bar")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -14,22 +14,46 @@ theme = ExtResource("1_7rf3k")
 script = ExtResource("1_ulvc6")
 song_row_scene = ExtResource("2_4yn0g")
 song_rows = NodePath("ScrollContainer/SongRows")
+search_bar = NodePath("HBoxContainer/Control/SearchBar")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Search" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Search"
+
+[node name="Control" type="Control" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SearchBar" type="LineEdit" parent="HBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="ClearSearch" type="Button" parent="HBoxContainer/Control"]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -11.0
+offset_top = -7.5
+offset_bottom = 7.5
+grow_horizontal = 0
+grow_vertical = 2
+text = "x"
 
 [node name="SearchRow" type="HBoxContainer" parent="."]
 layout_mode = 2
 theme_override_constants/separation = 0
-
-[node name="SearchBar" type="LineEdit" parent="SearchRow"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="ClearSearch" type="Button" parent="SearchRow"]
-layout_mode = 2
-text = "x"
-
-[node name="Search" type="Button" parent="SearchRow"]
-layout_mode = 2
-text = "Search"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 2
@@ -40,4 +64,5 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[connection signal="pressed" from="SearchRow/Search" to="." method="_on_search_pressed"]
+[connection signal="pressed" from="HBoxContainer/Search" to="." method="_on_search_pressed"]
+[connection signal="pressed" from="HBoxContainer/Control/ClearSearch" to="." method="_on_clear_search_pressed"]
